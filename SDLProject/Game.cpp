@@ -91,10 +91,26 @@ void Game::onKeyDown(Uint16 key)
 	case SDLK_ESCAPE:
 		running_ = false;
 		break;
+	/*case SDLK_LEFT:
+		vx += 1.0f;
+		break;
+	case SDLK_RIGHT:
+		vx -= 1.0f;
+		break;
+	case SDLK_UP:
+		//jump
+		//if on door, enter door, restart game
+		break;
+	case SDLK_LSHIFT:
+		//accelerate
+		break;
+	case SDLK_SPACE:
+		//attack
+		break;*/
 	}
 }
 
 void Game::onKeyUp(Uint16 key)
 {
-
+	//Cancel velocity, end attack
 }
