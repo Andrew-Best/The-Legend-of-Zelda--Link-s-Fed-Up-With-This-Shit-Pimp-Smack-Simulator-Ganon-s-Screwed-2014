@@ -21,12 +21,19 @@ protected:
 	virtual void onKeyDown(Uint16 key);
 	virtual void onKeyUp(Uint16 key);
 
+	bool isFacingRight_ = true;
+	bool isFacingLeft_ = false;
+	bool isRunningRight_ = false;
+	bool isRunningLeft_ = false;
+	bool isJumping_ = false;
+	bool isAttacking_ = false;
+
 	bool running_;
 
 	Uint32 clearColour_;
 	
-
 public:
+
 	Game(void);
 	~Game(void);
 
