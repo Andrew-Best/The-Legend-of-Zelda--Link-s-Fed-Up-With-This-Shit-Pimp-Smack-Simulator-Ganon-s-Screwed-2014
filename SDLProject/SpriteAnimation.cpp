@@ -10,9 +10,7 @@ SpriteAnimation::SpriteAnimation(SDL_Surface* image, const Vec2& pos, SDL_Rect s
 	Uint16 startFrame, Uint16 numFrames, float frameRate) : Sprite(image, pos, srcRect, alpha), frameWidth_(frameWidth), frameHeight_(frameHeight), 
 	numFrames_(numFrames), startFrame_(startFrame), frameRate_(frameRate)
 {
-	framesWide_ = pImage_->w / frameWidth;
-	framesHigh_ = pImage_->h / frameHeight;
-	updateSrcFrame();
+	initAnim();
 }
 
 
@@ -50,4 +48,11 @@ void SpriteAnimation::updateSrcFrame()
 
 	srcRect_.w = frameWidth_;
 	srcRect_.h = frameHeight_;
+}
+
+void SpriteAnimation::initAnim()
+{
+	framesWide_ = pImage_->clip_rect.w / frameWidth_;
+	framesHigh_ = pImage_->clip_rect.h / frameHeight_;
+	updateSrcFrame();
 }

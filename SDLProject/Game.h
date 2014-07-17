@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "MathUtils.h"
+#include "TMXLoader.h"
 
 class Game
 {

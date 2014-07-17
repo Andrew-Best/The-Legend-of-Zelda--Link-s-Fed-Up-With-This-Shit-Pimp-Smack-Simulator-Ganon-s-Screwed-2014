@@ -44,5 +44,4 @@ public:
 	}
 
 	virtual void Draw(SDL_Surface* surfaceToDrawOn);
-
 };

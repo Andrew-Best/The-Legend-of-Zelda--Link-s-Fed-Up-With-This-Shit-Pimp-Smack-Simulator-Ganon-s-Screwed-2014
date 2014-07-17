@@ -1,0 +1,46 @@
+#image must be the first token in the data file
+image: spritesheet.png
+cellWidth: 40
+cellHeight: 40
+
+Animation RunLeft
+numFrames RunLeft 4
+startFrame RunLeft 29
+frameRate RunLeft 0.2
+
+#Animation RunUp
+#numFrames RunUp 4
+#startFrame RunUp 12
+#frameRate RunUp 0.2
+
+#Animation RunDown
+#numFrames RunDown 4
+#startFrame RunDown 0
+#frameRate RunDown 0.2
+
+Animation RunRight
+numFrames RunRight 4
+startFrame RunRight 11
+frameRate RunRight 0.2
+
+Animation FaceRight
+numFrames FaceRight 1
+startFrame FaceRight 26
+frameRate FaceRight 0.2
+
+Animation FaceLeft
+numFrames FaceLeft 1
+startFrame FaceLeft 27
+frameRate FaceLeft 0.2
+
+Animation JumpRight
+numFrames JumpRight 1
+startFrames JumpRight 10
+frameRate JumpRight 0.2
+
+Animation JumpLeft
+numFrames JumpLeft 1
+startFrames JumpLeft 28
+frameRate JumpLeft 0.2
+
+defaultAnimation FaceRight

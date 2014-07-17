@@ -24,6 +24,7 @@ void Game::InitSDL()
 	clearColour_ = SDL_MapRGB(pDisplay_->format, CLEAR_RED, CLEAR_GREEN, CLEAR_BLUE);
 
 	loadAssets();
+
 }
 
 void Game::Run()
@@ -91,81 +92,9 @@ void Game::onKeyDown(Uint16 key)
 	case SDLK_ESCAPE:
 		running_ = false;
 		break;
-	case SDLK_LEFT:
-		//vx += 1.0f;
-		isAttacking_ = false;
-		isFacingLeft_ = false;
-		isRunningLeft_ = true;
-		isFacingRight_ = false;
-		isRunningRight_ = false;
-		break;
-	case SDLK_RIGHT:
-		//vx -= 1.0f;
-		isAttacking_ = false;
-		isFacingLeft_ = false;
-		isRunningLeft_ = false;
-		isFacingRight_ = false;
-		isRunningRight_ = true;
-		break;
-	case SDLK_UP:
-		//jump
-		//if on door, enter door, restart game
-		isJumping_ = true;
-		break;
-	case SDLK_LSHIFT:
-		//accelerate
-		break;
-	case SDLK_SPACE:
-		//attack
-		isAttacking_ = true;
-		break;
-	case SDLK_DOWN:
-		isJumping_ = false;
-		break;
 	}
 }
 
 void Game::onKeyUp(Uint16 key)
 {
-	//Cancel velocity, end attack
-	if(isRunningRight_)
-	{
-		if (isAttacking_)
-		{
-			isAttacking_ = false;
-			isRunningRight_ = false;
-			isFacingRight_ = true;
-		}
-		else if (isJumping_)
-		{
-			isJumping_ = false;
-			isRunningRight_ = false;
-			isFacingRight_ = true;
-		}
-		else
-		{
-			isFacingRight_ = true;
-			isRunningRight_ = false;
-		}
-	}
-	if(isRunningLeft_)
-	{
-		if (isAttacking_)
-		{
-			isAttacking_ = false;
-			isRunningLeft_ = false;
-			isFacingLeft_ = true;
-		}
-		else if (isJumping_)
-		{
-			isJumping_ = false;
-			isRunningLeft_ = false;
-			isFacingLeft_ = true;
-		}
-		else
-		{
-			isFacingLeft_ = true;
-			isRunningLeft_ = false;
-		}
-	}
 }

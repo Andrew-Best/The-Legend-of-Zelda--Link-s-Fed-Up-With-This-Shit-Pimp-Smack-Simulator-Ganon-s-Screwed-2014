@@ -29,14 +29,24 @@ struct Vec2
 		return Vec2(x - rhs.x, y - rhs.y);
 	}
 
-	Vec2 operator * (const Vec2& rhs)
+	Vec2 operator * (float rhs)
 	{
-		return Vec2(x * rhs.x, y * rhs.y);
+		return Vec2(x * rhs, y * rhs);
 	}
 
-	Vec2 operator / (const Vec2& rhs)
+	Vec2 operator / (float rhs)
 	{
-		return Vec2(x / rhs.x, y / rhs.y);
+		return Vec2(x / rhs, y / rhs);
+	}
+
+	bool operator > (const float& rhs)
+	{
+		return (x > rhs, y > rhs);
+	}
+
+	bool operator < (const float& rhs)
+	{
+		return (x < rhs, y < rhs);
 	}
 
 	void operator += (const Vec2& rhs)
@@ -51,7 +61,7 @@ struct Vec2
 		y -= rhs.y;
 	}
 
-	Vec2 operator *= (const float& rhs)
+	void operator *= (const float& rhs)
 	{
 		x *= rhs;
 		y *= rhs;
@@ -62,7 +72,6 @@ struct Vec2
 		x /= rhs;
 		y /= rhs;
 	}
-
 };
 
 class VectorMath

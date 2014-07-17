@@ -1,9 +1,21 @@
 #pragma once
 #include "Sprite.h"
+#include <map>
+#include <string>
 
 class SpriteAnimation : public Sprite
 {
+public:
+	struct AnimationData
+	{
+		Uint16 startFrame;
+		float frameRate;
+		Uint16 numFrames;
+	};
+
 protected:
+	std::map<std::string, AnimationData> anims_;
+
 	Uint16 numFrames_;
 	Uint16 currFrame_;
 	Uint16 startFrame_;
@@ -20,6 +32,7 @@ protected:
 	bool isPlaying_;
 
 	void updateSrcFrame(); //recalculate the srcRect_ based on the current frame
+	void initAnim();
 
 public:
 	SpriteAnimation();
@@ -71,6 +84,15 @@ public:
 	void SetNumFrames(Uint16 numFrames)
 	{
 		numFrames_ = numFrames;
+	}
+
+	void SetCurrAnim(std::string animation, Uint16 currFrame = 0)
+	{
+		AnimationData newAnim = anims_[animation];
+		frameRate_ = newAnim.frameRate;
+		startFrame_ = newAnim.startFrame;
+		numFrames_ = newAnim.numFrames;
+		currFrame_ = currFrame;
 	}
 
 	Uint16 GetWidth()
