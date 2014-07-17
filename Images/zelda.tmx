@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="60" height="15" tilewidth="40" tileheight="40">
- <tileset firstgid="1" name="background" tilewidth="40" tileheight="40">
+<map version="1.0" orientation="orthogonal" width="60" height="15" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="background" tilewidth="32" tileheight="32">
   <image source="backgroundTileSheet.png" width="120" height="160"/>
  </tileset>
  <layer name="Background" width="60" height="15">
